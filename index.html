@@ -5,6 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>المحامي قاسم العيسى</title>
 
+<!-- تحسينات SEO -->
+<meta name="description" content="مكتب المحامي قاسم العيسى يقدم خدمات قانونية واستشارات مهنية باحترافية وشفافية عالية بثلاث لغات.">
+<meta name="keywords" content="محامي, قانون, استشارات قانونية, عقود, قاسم العيسى, محامي سعودي, Lawyer, Legal Consultant">
+
+<!-- أيقونة الموقع -->
+<link rel="icon" href="favicon.ico">
+
 <!-- خطوط Google -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 
@@ -24,6 +31,7 @@ body {
   color: var(--text-light);
   overflow-x: hidden;
   scroll-behavior: smooth;
+  transition: all 0.4s ease;
 }
 
 header {
@@ -149,10 +157,21 @@ button.submit-btn:hover {
 
 footer {
   text-align: center;
-  padding: 20px;
+  padding: 30px 20px;
   border-top: 1px solid rgba(255,255,255,0.1);
   font-size: 0.9rem;
   color: #aaa;
+}
+
+footer a {
+  color: var(--gold);
+  margin: 0 8px;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+footer a:hover {
+  color: var(--gold-light);
 }
 
 /* متجاوب */
@@ -165,7 +184,6 @@ footer {
 <body>
   <header>
     <nav class="language-switch">
-      <!-- زر تبديل اللغة -->
       <button onclick="setLanguage('ar')">AR</button>
       <button onclick="setLanguage('en')">EN</button>
       <button onclick="setLanguage('nl')">NL</button>
@@ -200,21 +218,26 @@ footer {
 
   <footer>
     <p id="footer-text">© جميع الحقوق محفوظة - مكتب المحامي قاسم العيسى 2025</p>
+    <div>
+      <a href="mailto:example@email.com" title="البريد الإلكتروني">📧</a>
+      <a href="https://wa.me/966XXXXXXXXX" target="_blank" title="واتساب">💬</a>
+      <a href="https://www.linkedin.com/in/username" target="_blank" title="لينكدإن">🔗</a>
+    </div>
   </footer>
 
 <script>
-// التبديل بين اللغات
+// المحتوى متعدد اللغات
 const content = {
   ar: {
     dir: "rtl",
     name: "المحامي قاسم العيسى",
-    tagline: "العدل أساس القانون",
+    tagline: "العدل أساس الملك",
     aboutTitle: "نبذة تعريفية",
     aboutText: "محامٍ متخصص بخبرة طويلة في تقديم الاستشارات القانونية باحترافية وشفافية عالية.",
-    specialtiesTitle: "الخدمات",
-    s1: "استشارات",
-    s2: "عقود",
-    s3: "مرافعات",
+     specialtiesTitle: "الخدمات القانونية",
+    s1: "الاستشارات القانونية",
+    s2: "صياغة ومراجعة العقود",
+    s3: "المرافعات أمام الجهات القضائية",
     contactTitle: "تواصل معنا",
     namePH: "الاسم",
     emailPH: "البريد الإلكتروني",
@@ -225,13 +248,13 @@ const content = {
   en: {
     dir: "ltr",
     name: "Lawyer Kasem Al-Issa",
-    tagline: "Justice is the foundation of law",
+   tagline: "Justice is the foundation of governance",
     aboutTitle: "About",
-    aboutText: "A lawyer with extensive experience in providing legal consultations cases professionally and transparently.",
-    specialtiesTitle: "Legal Specialties",
-    s1: "Commercial Law",
-    s2: "Criminal Law",
-    s3: "Civil Law",
+    aboutText: "A lawyer with extensive experience in providing legal consultation and services with professionalism and transparency.",
+    specialtiesTitle: "Legal Services",
+    s1: "Legal Consultation",
+    s2: "Contract Drafting & Review",
+    s3: "Litigation & Representation",
     contactTitle: "Contact Us",
     namePH: "Name",
     emailPH: "Email",
@@ -242,13 +265,13 @@ const content = {
   nl: {
     dir: "ltr",
     name: "Advocaat Kasem Al-Issa",
-    tagline: "Gerechtigheid is de basis van de wet",
-    aboutTitle: "Over Mij",
-    aboutText: "Een advocaat met ruime ervaring in juridische consultaties  en handelszaken op een professionele en transparante manier.",
-    specialtiesTitle: "Juridische Specialiteiten",
-    s1: "Handelsrecht",
-    s2: "Strafrecht",
-    s3: "Burgerlijk recht",
+    tagline: "Gerechtigheid is de basis van goed bestuur",
+    aboutTitle: "Over mij",
+    aboutText: "Een advocaat met ruime ervaring in het bieden van juridisch advies en diensten op een professionele en transparante manier.",
+    specialtiesTitle: "Juridische diensten",
+    s1: "Juridisch advies",
+    s2: "Opstellen en controleren van contracten",
+    s3: "Procesvoering en vertegenwoordiging",
     contactTitle: "Neem Contact Op",
     namePH: "Naam",
     emailPH: "E-mail",
@@ -278,7 +301,7 @@ function setLanguage(lang) {
   document.getElementById("footer-text").innerText = c.footer;
 }
 
-// تأثير ظهور عند التمرير
+// تأثير الظهور عند التمرير
 const sections = document.querySelectorAll("section");
 window.addEventListener("scroll", () => {
   sections.forEach(sec => {
@@ -287,6 +310,11 @@ window.addEventListener("scroll", () => {
       sec.classList.add("visible");
     }
   });
+});
+
+// تنبيه عند إرسال الرسالة (تجريبي)
+document.getElementById("send").addEventListener("click", () => {
+  alert("✅ تم إرسال الرسالة بنجاح! (هذا نموذج تجريبي)");
 });
 </script>
 </body>
